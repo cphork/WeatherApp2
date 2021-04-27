@@ -4,6 +4,7 @@ import React from 'react'
 
 
 const WeatherDisplay = ({weather}) => {
+    
 
         const loaded = () => {
 
@@ -27,7 +28,7 @@ const WeatherDisplay = ({weather}) => {
    const loading = ()=> {
         return <h1>No Zip Code</h1>
    } 
-    return (loaded < 40 ) ? 'blue' : ((loading > 90) ? 'red': '')  
+    return (weather < 40 ) ? 'blue' : ((weather > 90) ? 'red': '')  
 }
 
 
