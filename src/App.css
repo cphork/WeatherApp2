@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+h2 {
+  color: red;
+  font-family: fantasy;
+  margin-top: 45px;
+}
+
+.weather-layout {
+  border: 2px solid teal;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
