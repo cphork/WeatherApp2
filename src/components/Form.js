@@ -21,8 +21,8 @@ const Form = (props) => {
 
         <>
             <div className='box-around'>
-                <h2>Today's Weather In Your Area</h2>
-                <img src='https://www.pngkey.com/png/detail/121-1215478_free-png-clouds-sun-and-rain-drops-weather.png' />
+                <h2>Weather Forecast</h2>
+                <img src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/ebc4db2235034.560a96356930d.gif' />
                 <div>
                     <form className='form' onSubmit={handleSubmit}>
                         <input

@@ -29,7 +29,7 @@ const WeatherDisplay = ({ weather }) => {
             <div>
                 <hr />
                 <h5>{weather.name}</h5>
-                <h1 style={{ color: tempcolor }}>{mainweather}</h1>
+                <h1>{mainweather}</h1>
                 <h4>Today's weather: {weather.weather[0].main}</h4>
                 <div style={style}>
                     <div>
