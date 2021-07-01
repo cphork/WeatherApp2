@@ -29,15 +29,15 @@ const WeatherDisplay = ({ weather }) => {
             <div>
                 <hr />
                 <h5>{weather.name}</h5>
+                <h4>Today's weather: <br />{weather.weather[0].main}</h4>
                 <h1>{mainweather}</h1>
-                <h4>Today's weather: {weather.weather[0].main}</h4>
-                <div style={style}>
+                <div className='min-max'>
                     <div>
                         <h5>Min</h5>
                         <h3>{minweather} </h3>
                     </div>
                     <div>
-                        <h5>Max </h5>
+                        <h5>Max</h5>
                         <h3>{maxweather}</h3>
                     </div>
                 </div>

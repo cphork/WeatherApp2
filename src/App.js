@@ -22,16 +22,10 @@ function App() {
     setWeather(data)
   }
 
-  const style = {
-    display: "flex",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    alignItems: "center"
-  }
+
 
   return (
-    <div className="App" style={style}>
+    <div className="App" >
       <div><Form zipsearch={getWeather} /></div>
       <div>< WeatherDisplay weather={weather} /></div>
     </div>
