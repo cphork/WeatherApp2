@@ -5,7 +5,7 @@ import WeatherDisplay from './components/WeatherDisplay'
 
 function App() {
 
-  const apiKey = "63141b67f040b24594bd809982cd9433"
+  const apiKey = "3d60ed299496644f31509670c264460d"
 
 
 
