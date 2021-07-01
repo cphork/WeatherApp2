@@ -1,39 +1,57 @@
 import React from 'react'
 
+const WeatherDisplay = ({ weather }) => {
+    const loaded = () => {
 
+        const mainweather = Math.floor(weather.main.temp)
+        const minweather = Math.floor(weather.main.temp_min)
+        const maxweather = Math.floor(weather.main.temp_max)
 
-
-const WeatherDisplay = ({weather}) => {
-    
-
-        const loaded = () => {
-
-            return (
-                
-                <div>
-                <h4 className="app-title">Today's Weather</h4>
-                <p>{weather.name}</p>
-                <p>{weather.weather.main}</p>
-                <p>{weather.weather.icon}</p>
-                <p>{weather.weather.description}</p>
-                <p>Today's Temp.:{weather.main.temp}</p>
-                <p>Min. Temp.:{weather.main.temp_min}</p>
-                <p>Max. Temp.:{weather.main.temp_max}</p>
-
-                </div>
-            
-            )
+        let tempcolor;
+        if (mainweather > 90) {
+            tempcolor = "red"
+        }
+        else if (mainweather < 40) {
+            tempcolor = "blue"
+        } else {
+            tempcolor = "black"
         }
 
-   const loading = ()=> {
-        return <h1>No Zip Code</h1>
-   } 
-    // return (weather < 40 ) ? 'blue' : ((weather > 90) ? 'red': 'null' ) 
-    // return (weather < 40 ) ? backgroundColor : 'blue' : (weather > 90 ) : backgroundColor: 'red'
-    return weather ? loaded () : loading ()
- 
+        const style = {
+            display: "flex",
+            justifyContent: "space-around"
+
+        }
+
+        return (
+
+
+            <div>
+                <hr />
+                <h5>{weather.name}</h5>
+                <h1 style={{ color: tempcolor }}>{mainweather}</h1>
+                <h4>Today's weather: {weather.weather[0].main}</h4>
+                <div style={style}>
+                    <div>
+                        <h5>Min</h5>
+                        <h3>{minweather} </h3>
+                    </div>
+                    <div>
+                        <h5>Max </h5>
+                        <h3>{maxweather}</h3>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    const loading = () => {
+        return (
+            <p>No weather to display</p>
+        )
+    }
+
+    return weather ? loaded() : loading()
 }
-
-
 
 export default WeatherDisplay

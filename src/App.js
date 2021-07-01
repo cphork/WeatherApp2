@@ -1,39 +1,39 @@
-import {useEffect, useState} from 'react'
+import { useState } from 'react'
+import './App.css';
 import Form from './components/Form'
 import WeatherDisplay from './components/WeatherDisplay'
-import './App.css';
-
-
-
 
 function App() {
 
-  const apiKey= '28d16bb5f85ac24e3c1aef8d245dc35b'
+  const apiKey = "63141b67f040b24594bd809982cd9433"
 
 
-    const [weather, setWeather]=useState(null)
 
-    const getWeather = async(searchTerm)=>{
-        
-        const response = await fetch (`http://api.openweathermap.org/data/2.5/weather?zip=99501,us&appid=${apiKey} ${searchTerm}`
-        )
-
-        const data = await response.json()
-
-        setWeather(data)
-
-    };
-
-    useEffect(() => {getWeather('')},[])
+  const [weather, setWeather] = useState(null)
 
 
+
+  const getWeather = async (searchTerm) => {
+    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${searchTerm},us&units=imperial&appid=${apiKey}`)
+    const data = await response.json()
+
+
+
+    setWeather(data)
+  }
+
+  const style = {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    alignItems: "center"
+  }
 
   return (
-    <div className="App">
-
-      <Form weathersearch={getWeather} />
-      <WeatherDisplay weather={weather} /> 
-      
+    <div className="App" style={style}>
+      <div><Form zipsearch={getWeather} /></div>
+      <div>< WeatherDisplay weather={weather} /></div>
     </div>
   );
 }

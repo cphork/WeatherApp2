@@ -50,3 +50,13 @@ img {
   width: 200px;
 }
 
+.form {
+  margin-top: 15px;
+}
+
+.App {
+  border: 2px solid teal;
+  margin-top: 55px;
+  width: 355px;
+  margin-left: 25px;
+}
